@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Space+Grotesk:wght@300;400;500;600&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #04040c;
+  --cyan: #00f5ff;
+  --pink: #ff2d78;
+  --lime: #aaff00;
+  --purple: #7b2fff;
+  --orange: #ff8c00;
+  --white: #eef0ff;
+  --gray: #5a5a7a;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--white);
+  font-family: 'Space Grotesk', sans-serif;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  background: repeating-linear-gradient(
+    0deg, transparent, transparent 2px,
+    rgba(0,0,0,0.07) 2px, rgba(0,0,0,0.07) 4px
+  );
+}
+
+a { text-decoration: none; color: inherit; }
+button { cursor: pointer; }
+
+@keyframes glitch {
+  0%,100%{clip-path:inset(0 0 98% 0);transform:translateX(0)}
+  20%{clip-path:inset(20% 0 60% 0);transform:translateX(-4px)}
+  40%{clip-path:inset(50% 0 30% 0);transform:translateX(4px)}
+  60%{clip-path:inset(70% 0 10% 0);transform:translateX(-2px)}
+  80%{clip-path:inset(10% 0 80% 0);transform:translateX(3px)}
+}
+@keyframes glitch2 {
+  0%,100%{clip-path:inset(0 0 98% 0);transform:translateX(0)}
+  20%{clip-path:inset(40% 0 40% 0);transform:translateX(4px)}
+  40%{clip-path:inset(10% 0 80% 0);transform:translateX(-4px)}
+  60%{clip-path:inset(80% 0 5% 0);transform:translateX(2px)}
+  80%{clip-path:inset(60% 0 20% 0);transform:translateX(-3px)}
+}
+@keyframes flicker { 0%,95%,100%{opacity:1} 96%{opacity:.7} 97%{opacity:1} 98%{opacity:.5} 99%{opacity:1} }
+@keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-12px)} }
+@keyframes slideUp { from{opacity:0;transform:translateY(40px)} to{opacity:1;transform:translateY(0)} }
+@keyframes fadeIn { from{opacity:0} to{opacity:1} }
+@keyframes spin { from{transform:rotate(0deg)} to{transform:rotate(360deg)} }
